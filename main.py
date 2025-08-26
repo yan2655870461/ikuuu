@@ -11,7 +11,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # 域名配置
-BASE_DOMAIN = "ikuuu.do"
+BASE_DOMAIN = "ikuuu.de"
 BASE_URL = f"https://{BASE_DOMAIN}"
 
 # 本地测试变量，本地测试时可以在这里设置，为空时使用环境变量
@@ -113,8 +113,8 @@ def login_and_get_cookie():
     email = LOCAL_EMAIL if LOCAL_EMAIL else os.getenv('IKUUU_EMAIL')
     password = LOCAL_PASSWORD if LOCAL_PASSWORD else os.getenv('IKUUU_PASSWORD')
 
-    print_with_time("email:", email)
-    print_with_time("password:", password)
+    print_with_time(email, "INFO")
+    print_with_time(password, "INFO")
     
     if not email or not password:
         print_with_time("请设置账户信息", "ERROR")
