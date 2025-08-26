@@ -112,6 +112,9 @@ def login_and_get_cookie():
     # 按优先级获取账户信息：本地变量 > 环境变量
     email = LOCAL_EMAIL if LOCAL_EMAIL else os.getenv('IKUUU_EMAIL')
     password = LOCAL_PASSWORD if LOCAL_PASSWORD else os.getenv('IKUUU_PASSWORD')
+
+    print_with_time("email:", email)
+    print_with_time("password:", password)
     
     if not email or not password:
         print_with_time("请设置账户信息", "ERROR")
